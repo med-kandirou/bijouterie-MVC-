@@ -21,7 +21,7 @@
           <div class="row">
             <?php foreach($data as $prod) :?>
             <div class="col-md-4">
-              <div class="info">
+              <div class="info_dash">
                 <p><?= $prod['nom']; ?></p>
                 <img src="<?= URLROOT.'/images/'.$prod['image'].''?>" alt="Diamond Ring"><br>
                 <p>$<span class="price"><?= $prod['prix']; ?></span></p>
