@@ -24,7 +24,7 @@ class Admin extends database{
 
     public function logout(){
         session_destroy();
-        header("location:../Pages/login");
+        return true;
     }
 
 }

@@ -88,6 +88,9 @@ class Admins extends Controller{
     }
 
     public function logout(){
-        $this->admin->logout();
+        if($this->admin->logout()==true){
+            header("location:".URLROOT.'/pages/'."");
+            exit();
+        }
     }
 }

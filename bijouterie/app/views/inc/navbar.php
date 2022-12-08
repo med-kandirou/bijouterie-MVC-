@@ -24,9 +24,12 @@
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo URLROOT.'/Admin/dashbord'; ?>"><?= $_SESSION['name'] ?></a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo URLROOT.'/Admins/logout'; ?>">Log out</a>
+              </li>
             <?php else :?>
               <li class="nav-item">
-                <a class="nav-link" href="<?php echo URLROOT.'/pages/connect'; ?>">connect</a>
+                <a class="nav-link" href="<?php echo URLROOT.'/pages/connect'; ?>">Connect</a>
               </li>
             <?php endif ;?>
           </ul>
