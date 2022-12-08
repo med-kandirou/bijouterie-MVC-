@@ -65,11 +65,6 @@ class Products extends Controller{
             if($data==true){
                 echo "updated";
             }
-
         }
-        
-
     }
-
-
 }
