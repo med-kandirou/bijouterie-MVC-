@@ -6,7 +6,7 @@
     <!-- header section strats -->
     <header class="header_section">
       <div class="container-fluid">
-        <?php require_once APPROOT.'/views/admin/navbar_admin.php'; ?>
+        <?php require_once APPROOT.'/views/inc/navbar.php'; ?>
       </div>
     </header>
     <!-- end header section -->

@@ -1,9 +1,9 @@
 <?php
 
-class Users extends Controller{
+class Admins extends Controller{
 
     function __construct() {
-        $this->userModel=$this->model('User');
+        $this->admin=$this->model('Admin');
     }
 
     function geterror($data,$field)
@@ -74,7 +74,7 @@ class Users extends Controller{
                 $this->view('connect',$data);
             }
             else{
-                $res=$this->userModel->login($email,$password);
+                $res=$this->admin->login($email,$password);
                 if($res==0){
                     $data['isTrue']="invalid";
                     $this->view('connect',$data);
@@ -88,6 +88,6 @@ class Users extends Controller{
     }
 
     public function logout(){
-        $this->userModel->logout();
+        $this->admin->logout();
     }
 }

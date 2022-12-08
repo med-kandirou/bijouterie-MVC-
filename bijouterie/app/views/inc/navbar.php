@@ -7,7 +7,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-          <ul class="navbar-nav  ">
+          <ul class="navbar-nav ">
             <li class="nav-item active">
               <a class="nav-link" href="<?php echo URLROOT.'/pages/'; ?>">Home <span class="sr-only">(current)</span></a>
             </li>
@@ -20,9 +20,15 @@
             <li class="nav-item">
               <a class="nav-link" href="<?php echo URLROOT.'/pages/contact'; ?>"> Contact</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo URLROOT.'/pages/connect'; ?>"> Connect</a>
-            </li>
+            <?php if(isset($_SESSION['id'])) :?>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo URLROOT.'/Admin/dashbord'; ?>"><?= $_SESSION['name'] ?></a>
+              </li>
+            <?php else :?>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo URLROOT.'/pages/connect'; ?>">connect</a>
+              </li>
+            <?php endif ;?>
           </ul>
         </div>
       </div>

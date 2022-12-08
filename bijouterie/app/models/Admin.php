@@ -1,6 +1,6 @@
 <?php
 
-class User extends database{
+class Admin extends database{
     function __construct() {}
 
     public function login($email,$pass){
