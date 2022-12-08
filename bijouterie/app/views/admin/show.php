@@ -13,24 +13,24 @@
   </div>
   <h1 class="title">Update product </h1>
   <div class="container">
-    <form action="" method="post">
+    <form action="../Admins/update" method="post">
         <div class="form-group">
             <label >Name :</label>
-            <input type="text" class="form-control" required value="<?= $data['nom']; ?>">
+            <input type="text" class="form-control" name="nom" required value="<?= $data['nom']; ?>">
         </div>
         <div class="form-group">
             <label >Description :</label>
             <div>
-                <textarea name=""rows="5" class="form-control" required><?= $data['description']; ?></textarea>
+                <textarea name="desc" rows="5" class="form-control" required><?= $data['description']; ?></textarea>
             </div>
         </div>
         <div class="form-group">
             <label>Price :</label>
-            <input type="number" class="form-control" required value="<?= $data['prix'];?>">
+            <input type="number" name="prix" class="form-control" required value="<?= $data['prix'];?>">
         </div>
         <div class="form-group">
             <label>Quantité :</label>
-            <input type="number" class="form-control" required value="<?= $data['quantite']; ?>">
+            <input type="number" name="qt" class="form-control" required value="<?= $data['quantite']; ?>">
         </div>
         <div class="form-group">
             <label>Picture :</label>
@@ -38,7 +38,7 @@
         </div>
         <div class="form-group">
             <label>Categorie :</label>
-            <select name="" class="form-control" required>
+            <select name="cat" class="form-control" required>
                 <option value="">--Select--</option>
                 <?php foreach($data2 as $cat):?> 
                     <option value="<?= $cat['id_c']; ?>"><?= $cat['libelle']; ?></option>
