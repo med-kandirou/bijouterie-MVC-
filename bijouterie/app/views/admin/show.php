@@ -13,7 +13,7 @@
   </div>
   <h1 class="title">Update product </h1>
   <div class="container">
-    <form action="../Admins/update" method="post">
+    <form action="../update/<?= $data['id_p']?>" method="post">
         <div class="form-group">
             <label >Name :</label>
             <input type="text" class="form-control" name="nom" required value="<?= $data['nom']; ?>">
@@ -34,7 +34,7 @@
         </div>
         <div class="form-group">
             <label>Picture :</label>
-            <input type="file" class="form-control" required value="<?= $data['ic_c']; ?>">
+            <input type="file" class="form-control" name="image" required >
         </div>
         <div class="form-group">
             <label>Categorie :</label>

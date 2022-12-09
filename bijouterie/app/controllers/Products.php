@@ -60,8 +60,13 @@ class Products extends Controller{
 
     public function update($id_prod){
         if($_SERVER['REQUEST_METHOD']=='POST'){
-            extract($_post);
-            $data=$this->product->update($id_prod,$nom,$desc,$img,$prix,$qt,$cat);
+            $nom=$_POST['nom'];
+            $desc=$_POST['desc'];
+            // $img=$_FILES["image"]["name"];
+            $prix=$_POST['prix'];
+            $qt=$_POST['qt'];
+            $cat=$_POST['cat'];
+            $data=$this->product->update($id_prod,$nom,$desc,'pic',$prix,$qt,$cat);
             if($data==true){
                 echo "updated";
             }
