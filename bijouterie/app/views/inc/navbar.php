@@ -21,12 +21,14 @@
               <a class="nav-link" href="<?php echo URLROOT.'/pages/contact'; ?>"> Contact</a>
             </li>
             <?php if(isset($_SESSION['id'])) :?>
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo URLROOT.'/Admin/dashbord'; ?>"><?= $_SESSION['name'] ?></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo URLROOT.'/Admins/logout'; ?>">Log out</a>
-              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><?= $_SESSION['name'] ?></a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="<?php echo URLROOT.'/Admin/dashbord'; ?>">Dashbord</a></li>
+                    <hr>
+                    <li><a class="dropdown-item" href="<?php echo URLROOT.'/Admins/logout'; ?>">Log out</a></li>
+                  </ul>
+              </li> 
             <?php else :?>
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo URLROOT.'/pages/connect'; ?>">Connect</a>
