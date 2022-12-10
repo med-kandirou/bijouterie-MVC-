@@ -69,11 +69,13 @@ class Products extends Controller{
             if(!empty($img)){
                 $data=$this->product->update_with_image($id_prod,$nom,$desc,$img,$prix,$qt,$cat);
                 if($data==true){
+                    move_uploaded_file($_FILES['image']['tmp_name'], 'images/'.$img);
                     echo "updated image";
                 }
             }else{
                 $data=$this->product->update_wihout_image($id_prod,$nom,$desc,$prix,$qt,$cat);
                 if($data==true){
+                    
                     echo "updated wihout image";
                 }
             }
