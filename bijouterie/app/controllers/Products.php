@@ -66,9 +66,16 @@ class Products extends Controller{
             $prix=$_POST['prix'];
             $qt=$_POST['qt'];
             $cat=$_POST['cat'];
-            $data=$this->product->update($id_prod,$nom,$desc,$img,$prix,$qt,$cat);
-            if($data==true){
-                echo "updated";
+            if(!empty($img)){
+                $data=$this->product->update_with_image($id_prod,$nom,$desc,$img,$prix,$qt,$cat);
+                if($data==true){
+                    echo "updated image";
+                }
+            }else{
+                $data=$this->product->update_wihout_image($id_prod,$nom,$desc,$prix,$qt,$cat);
+                if($data==true){
+                    echo "updated wihout image";
+                }
             }
         }
     }

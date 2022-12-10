@@ -50,12 +50,25 @@ class Product extends database{
         return $res;
     }
 
-    public function update($id_prod,$nom,$desc,$img,$prix,$qt,$cat){
+    public function update_with_image($id_prod,$nom,$desc,$img,$prix,$qt,$cat){
         $sql = "UPDATE `product` SET `nom`=:nom,`description`=:desc,`image`=:img,`prix`=:prix,`quantite`=:qt,`id_cat`=:cat WHERE id_p=:id_prod";
         $stmt=$this->openConnection()->prepare($sql);
         $stmt->bindParam(':nom', $nom);
         $stmt->bindParam(':desc', $desc);
         $stmt->bindParam(':img', $img);
+        $stmt->bindParam(':prix', $prix);
+        $stmt->bindParam(':qt', $qt);
+        $stmt->bindParam(':cat', $cat);
+        $stmt->bindParam(':id_prod', $id_prod);
+        $stmt->execute();
+        return true;
+    }
+
+    public function update_wihout_image($id_prod,$nom,$desc,$prix,$qt,$cat){
+        $sql = "UPDATE `product` SET `nom`=:nom,`description`=:desc,`prix`=:prix,`quantite`=:qt,`id_cat`=:cat WHERE id_p=:id_prod";
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':nom', $nom);
+        $stmt->bindParam(':desc', $desc);
         $stmt->bindParam(':prix', $prix);
         $stmt->bindParam(':qt', $qt);
         $stmt->bindParam(':cat', $cat);
