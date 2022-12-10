@@ -62,11 +62,11 @@ class Products extends Controller{
         if($_SERVER['REQUEST_METHOD']=='POST'){
             $nom=$_POST['nom'];
             $desc=$_POST['desc'];
-            // $img=$_FILES["image"]["name"];
+            $img=$_FILES["image"]["name"];
             $prix=$_POST['prix'];
             $qt=$_POST['qt'];
             $cat=$_POST['cat'];
-            $data=$this->product->update($id_prod,$nom,$desc,'pic',$prix,$qt,$cat);
+            $data=$this->product->update($id_prod,$nom,$desc,$img,$prix,$qt,$cat);
             if($data==true){
                 echo "updated";
             }
