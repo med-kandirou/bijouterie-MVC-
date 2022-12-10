@@ -57,7 +57,6 @@ class Products extends Controller{
         $this->view('admin/show',$data,$data2);
     }
 
-
     public function update($id_prod){
         if($_SERVER['REQUEST_METHOD']=='POST'){
             $nom=$_POST['nom'];

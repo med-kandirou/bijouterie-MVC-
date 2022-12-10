@@ -1,5 +1,5 @@
 
-<?php require_once APPROOT.'/views/inc/header.php';extract($data);?>
+<?php require_once APPROOT.'/views/inc/header.php';?>
 <body class="sub_page">
 
   <div class="hero_area">
@@ -27,19 +27,17 @@
 
                   <div class="form-outline mb-4">
                     <label class="form-label email_login" for="email_login">Email address</label>
-                    <input type="email" name="email" class="form-control form-control-lg" value="<?php if(!empty($data['email'])) echo $data['email'];?>"/>
-                    <p class="inavlid"><?php if(!empty($email_err)) echo $email_err;?></p>
+                    <input type="email" name="email" class="form-control form-control-lg" value="<?= $data['email'] ;?>"/>
+                    <p class="inavlid"><?= $data['email_err'] ;?></p>
                   </div>
                   <div class="form-outline mb-4">
                     <label class="form-label pass_login" for="pass_login">Password</label>
-                    <input type="password" name="password" class="form-control form-control-lg" value="<?php if(!empty($password)) echo $password ;?>" >
-                    <p class="inavlid"><?php if(!empty($password_err)) echo $password_err ;?></p>
+                    <input type="password" name="password" class="form-control form-control-lg" value="<?= $data['password'] ;?>">
+                    <p class="inavlid"><?= $data['password_err'] ;?></p>
                   </div>
-                    <?php if(!empty($isTrue)) :?>
-                        <div class="alert alert-danger" role="alert">
-                        Email or password invalid
-                        </div>
-                    <?php  endif ;?>
+                      <div class="alert alert-danger" role="alert">
+                        <?= $data['isTrue'];?>
+                      </div>
 
                   <div class="pt-1 mb-4">
                     <button class="btn btn-dark btn-lg btn-block" type="submit">Connecter</button>

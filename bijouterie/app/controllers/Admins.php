@@ -76,7 +76,7 @@ class Admins extends Controller{
             else{
                 $res=$this->admin->login($email,$password);
                 if($res==0){
-                    $data['isTrue']="invalid";
+                    $data['isTrue']="Email or password invalid";
                     $this->view('connect',$data);
                 }
                 else{

@@ -22,7 +22,14 @@ class Pages extends Controller{
     }
     
     public function connect(){
-        $this->view('connect');
+        $data=[
+            'email'=>'',
+            'password'=>'',
+            'email_err'=>'',
+            'password_err'=>'',
+            'isTrue'=>''
+        ];
+        $this->view('connect',$data);
     }
 
     public function addProd(){
