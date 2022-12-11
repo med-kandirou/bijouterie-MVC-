@@ -35,10 +35,9 @@
                     <input type="password" name="password" class="form-control form-control-lg" value="<?= $data['password'] ;?>">
                     <p class="inavlid"><?= $data['password_err'] ;?></p>
                   </div>
-                      <div class="alert alert-danger" role="alert">
-                        <?= $data['isTrue'];?>
+                      <div id="msg_err">
+                        <?= $data['isTrue']; ?>
                       </div>
-
                   <div class="pt-1 mb-4">
                     <button class="btn btn-dark btn-lg btn-block" type="submit">Connecter</button>
                   </div>

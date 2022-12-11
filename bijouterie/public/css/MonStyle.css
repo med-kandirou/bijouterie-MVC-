@@ -192,3 +192,11 @@ margin-bottom: 6%;
 #add{
     margin-top: 30px;
 }
+
+
+#msg_err
+{
+    color: red;
+    width: 100%;
+    height: 30px;
+}
