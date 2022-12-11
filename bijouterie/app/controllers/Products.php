@@ -47,7 +47,8 @@ class Products extends Controller{
         $res=$this->product->delete($id_prod);
         if($res==true)
         {
-            echo "deleted";
+            header("location:".URLROOT.'/pages/dashbord'."");
+            exit();
         }
     }
 
