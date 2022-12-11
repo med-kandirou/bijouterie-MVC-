@@ -37,7 +37,8 @@ class Products extends Controller{
             $id_cat=$_POST['id_cat'];
             $res=$this->product->add($nom,$desc,$img,$prix,$qt,$id_cat);
             if($res==true){
-                echo "aded";
+                header("location:".URLROOT.'/pages/dashbord'."");
+                exit();
             }
         }
     }
@@ -70,13 +71,14 @@ class Products extends Controller{
                 $data=$this->product->update_with_image($id_prod,$nom,$desc,$img,$prix,$qt,$cat);
                 if($data==true){
                     move_uploaded_file($_FILES['image']['tmp_name'], 'images/'.$img);
-                    echo "updated image";
+                    header("location:".URLROOT.'/pages/dashbord'."");
+                    exit();
                 }
             }else{
                 $data=$this->product->update_wihout_image($id_prod,$nom,$desc,$prix,$qt,$cat);
                 if($data==true){
-                    
-                    echo "updated wihout image";
+                    header("location:".URLROOT.'/pages/dashbord'."");
+                    exit();
                 }
             }
         }
