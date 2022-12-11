@@ -18,7 +18,7 @@
           <div class="nom_cat">
             <ul>
               <li id="cat"><a href="#" >Catégories :</a></li>
-              <li><a href="#">Nouveautés</a></li>
+              <li><a href="#">ALL</a></li>
               <li><a href="#">Tous</a></li>
               <li><a href="#">Bagues</a></li>
               <li><a href="#">Bracelets</a></li>
@@ -30,7 +30,7 @@
       </div>
       <div class="col-md-9">
         <div class="container" id="prod">
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-12">
               <div class="d-flex justify-content-end">
                 <div id="tri">
@@ -46,7 +46,7 @@
               </div>
 
             </div>
-          </div>
+          </div> -->
           
           <!-- row 1 -->
           <div class="row">
