@@ -76,5 +76,11 @@ class Product extends database{
         $stmt->execute();
         return true;
     }
+    public function filter($id_cat){
+        $sql = "SELECT `id_p`, `nom`, `image`, `prix`, `quantite` FROM `product` where `id_cat`=".$id_cat."";
+        $stmt=$this->openConnection()->query($sql);
+        $data=$stmt->fetchAll();
+        return $data;
+    }
 
 }

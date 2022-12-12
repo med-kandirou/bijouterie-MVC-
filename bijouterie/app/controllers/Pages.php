@@ -14,7 +14,9 @@ class Pages extends Controller{
     }
 
     public function gallery(){
-        $this->view('gallery');
+        $data=$this->model->getcat();
+        $data2=$this->model->getproduct();
+        $this->view('gallery',$data,$data2);
     }
 
     public function contact(){
