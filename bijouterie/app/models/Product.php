@@ -83,4 +83,12 @@ class Product extends database{
         return $data;
     }
 
+
+    public function displayProd($id_p){
+        $sql = "SELECT `id_p`, `nom`, `description`, `image`, `prix`, `quantite` FROM `product` where `id_p`=".$id_p."";
+        $stmt=$this->openConnection()->query($sql);
+        $data=$stmt->fetch();
+        return $data;
+    }
+
 }

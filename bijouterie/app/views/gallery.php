@@ -38,7 +38,7 @@
                   <img src="<?= URLROOT.'/images/'.$prod['image'].''?>" alt="Diamond Ring"><br>
                   <p>$<span class="price"><?= $prod['prix']; ?></span></p>
                   <p class="qt">Quantité :<?= $prod['quantite']; ?></p>
-                  <a href="<?= '../Products/delete/'.$prod['id_p']; ?>" class="buy">Details</a><br>
+                  <p><a href="<?= URLROOT.'/Users/displayProd/'.$prod['id_p']; ?>" class="buy">Details</a></p><br>
                 </div><br>
               </div>
             <?php endforeach;?>
