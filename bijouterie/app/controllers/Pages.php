@@ -35,11 +35,22 @@ class Pages extends Controller{
     }
 
     public function addProd(){
-        $this->view('admin/addProd');
+        if(isset($_SESSION['id'])){
+            $this->view('admin/addProd');
+        }
+        else{
+            $this->connect();
+        } 
     }
 
     public function dashbord(){
-        $data=$this->model->getproduct();
-        $this->view('admin/dashbord',$data);
+        if(isset($_SESSION['id'])){
+            $data=$this->model->getproduct();
+            $this->view('admin/dashbord',$data);
+        }
+        else{
+            $this->connect();
+        }
+        
     }
 }
