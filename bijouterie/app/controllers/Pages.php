@@ -24,14 +24,20 @@ class Pages extends Controller{
     }
     
     public function connect(){
-        $data=[
-            'email'=>'',
-            'password'=>'',
-            'email_err'=>'',
-            'password_err'=>'',
-            'isTrue'=>''
-        ];
-        $this->view('connect',$data);
+        if(isset($_SESSION['id'])){
+            $data=$this->model->getproduct();
+            $this->view('admin/dashbord',$data);
+        }
+        else{
+            $data=[
+                'email'=>'',
+                'password'=>'',
+                'email_err'=>'',
+                'password_err'=>'',
+                'isTrue'=>''
+            ];
+            $this->view('connect',$data);
+        }    
     }
 
     public function addProd(){
