@@ -14,7 +14,7 @@
     <div class="container">
       <div class="addprod">
         <h1 class="title">Dashbord</h1>
-        <a href="../Products/addProd"><button id="add" class="btn btn-success btn_update">Add product</button></a>
+        <a href="../Products/addProd" ><button id="add" class="btn btn-dark btn_update">Add product</button></a>
       </div>
     </div>
         <div class="container">
