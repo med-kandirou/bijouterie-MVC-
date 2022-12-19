@@ -37,6 +37,7 @@ class Products extends Controller{
             $id_cat=$_POST['id_cat'];
             $res=$this->product->add($nom,$desc,$img,$prix,$qt,$id_cat);
             if($res==true){
+                move_uploaded_file($_FILES['image']['tmp_name'], 'images/'.$img);
                 header("location:".URLROOT.'/pages/dashbord'."");
                 exit();
             }
